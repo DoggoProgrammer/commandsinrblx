@@ -54,6 +54,7 @@ function tell()
     end
   else
     rconsolewarn('The Round did not start yet')
+    rconsoleprint('@@DARK_GRAY@@')
   end
 end
 ---------------------------------------------------------------------------------------------
@@ -69,6 +70,7 @@ game:GetService('RunService').RenderStepped:Connect(function()
       end
       if found == false then
           rconsolewarn(inp:sub(5, inp:len()) .. ' - That Player could not be found')
+          rconsoleprint('@@DARK_GRAY@@')
       end
     elseif inp == '.tell' then
       tell()
@@ -92,6 +94,7 @@ game:GetService('RunService').RenderStepped:Connect(function()
         end
       else
         rconsolewarn('The Round did not start yet')
+        rconsoleprint('@@DARK_GRAY@@')
       end
     elseif inp == '._tpsheriff' then
       if round() then
@@ -113,6 +116,7 @@ game:GetService('RunService').RenderStepped:Connect(function()
         end
       else
         rconsolewarn('The Round did not start yet')
+        rconsoleprint('@@DARK_GRAY@@')
       end
     elseif inp == '._tplobby' then
       game.Players.LocalPlayer.Character:WaitForChild('HumanoidRootPart').CFrame = game.Workspace.Lobby.Spawns.Spawn.CFrame
@@ -125,6 +129,7 @@ game:GetService('RunService').RenderStepped:Connect(function()
         end
       else
         rconsolewarn('The Round did not start yet')
+        rconsoleprint('@@DARK_GRAY@@')
       end
     elseif inp == '.getgun' then
       if round() then
@@ -137,9 +142,11 @@ game:GetService('RunService').RenderStepped:Connect(function()
         end
         if found == false then
           rconsolewarn('The Gun is not dropped yet')
+          rconsoleprint('@@DARK_GRAY@@')
         end
       else
         rconsolewarn('The Round did not start yet')
+        rconsoleprint('@@DARK_GRAY@@')
       end
     elseif inp == '.getfakeknife' then
       if round() then
@@ -161,6 +168,7 @@ game:GetService('RunService').RenderStepped:Connect(function()
         end
       else
         rconsolewarn('The Round did not start yet')
+        rconsoleprint('@@DARK_GRAY@@')
       end
     elseif inp == '.getfakegun' then
       if round() then
@@ -182,6 +190,7 @@ game:GetService('RunService').RenderStepped:Connect(function()
         end
       else
         rconsolewarn('The Round did not start yet')
+        rconsoleprint('@@DARK_GRAY@@')
       end
     elseif inp == '.crashmurderer' then
       if round() then
@@ -211,6 +220,7 @@ game:GetService('RunService').RenderStepped:Connect(function()
         end
       else
         rconsolewarn('The Round did not start yet')
+        rconsoleprint('@@DARK_GRAY@@')
       end
     elseif inp == '.crashsheriff' then
       if round() then
@@ -240,26 +250,45 @@ game:GetService('RunService').RenderStepped:Connect(function()
         end
       else
         rconsolewarn('The Round did not start yet')
+        rconsoleprint('@@DARK_GRAY@@')
       end
     elseif inp == '.rejoin' then
       game:GetService('TeleportService'):Teleport(game.PlaceId)
     elseif inp == '.clear' then
       rconsoleclear()
     elseif inp == '.killall' then
-      rconsoleprint('Please equip the Knife - Starting in 3 seconds\n')
-      task.wait(3)
-      for _, v in pairs(game.Players:GetPlayers()) do
-          local cfr = v.Character:WaitForChild('HumanoidRootPart').CFrame
-          v.Character:WaitForChild('HumanoidRootPart').CFrame = game.Players.LocalPlayer.Character:WaitForChild('HumanoidRootPart').CFrame
-          mouse1click()
-          wait(0.2)
-          mouse1click()
-          v.Character:WaitForChild('HumanoidRootPart').CFrame = cfr
+      local found = false
+      for y, x in pairs(game.LocalPlayer.Backpack:GetChildren()) do
+          if x.Name == 'Knife' then
+              found = true
+          end
+      end
+      for y, x in pairs(game.LocalPlayer.Character:GetChildren()) do
+          if x.Name == 'Knife' then
+              found = true
+          end
+      end
+      if found then
+          rconsoleprint('Please equip the Knife - Starting in 3 seconds\n')
+          task.wait(3)
+          for _, v in pairs(game.Players:GetPlayers()) do
+              local cfr = v.Character:WaitForChild('HumanoidRootPart').CFrame
+              v.Character:WaitForChild('HumanoidRootPart').CFrame = game.Players.LocalPlayer.Character:WaitForChild('HumanoidRootPart').CFrame
+              mouse1click()
+              wait(0.2)
+              mouse1click()
+              v.Character:WaitForChild('HumanoidRootPart').CFrame = cfr
+          end
+      else
+          rconsolewarn('You are not the Murderer')
+          rconsoleprint('@@DARK_GRAY@@')
       end
     elseif inp == '.rejoin' then
       game:GetService('TeleportService'):Teleport(game.PlaceId)
+      rconsoleprint('@@DARK_GRAY@@')
     else
       rconsolewarn('That Command was not found')
+      rconsoleprint('@@DARK_GRAY@@')
     end
     
     

@@ -1,7 +1,7 @@
-if not rconsoleprint or not rconsoleinput or not rconsoletitle then
+if not rconsoleprint or not rconsoleinput or not rconsolename then
   game.Players.LocalPlayer:Kick('Your Executer does not support this Script.')
 end
-rconsoletitle('Murder Mystery 2 Commands')
+rconsolename('Murder Mystery 2 Commands')
 rconsoleprint('@@LIGHT_BLUE@@')
 rconsoleprint('Murder Mystery 2 Commands\n\nMade By DoggoProgammer#3317\n\nCommands:\n.tp <plr name> - Teleports you given Player\n.tell - Tells you the Murderer and the Sheriff\n._tpmurderer - Teleports you to the Murderer\n._tpsheriff - Teleports you to the Sheriff\n._tplobby - Teleports you to the Lobby\n._tpmap - Teleports you to the Map\n.getgun - gets the dropped gun for you\n.crashmurderer - Crashes the murderer (DOES NOT WORK YET)\n.crashsheriff - Crashes the sheriff (DOES NOT WORK YET)\n.getfakeknife - Gives you the knife from the current murderer\n.getfakegun - Gives you the gun from the current sheriff\n\nTYPE FIRST COMMAND HERE: ')
 rconsoleprint('@@GRAY@@')

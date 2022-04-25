@@ -200,14 +200,16 @@ game:GetService('RunService').RenderStepped:Connect(function()
                 end
             end
         end
+        rconsoleprint('The Crash will begin in 2 Seconds, please equip the Fake Knife\n')
+        task.wait(1)
+        rconsoleprint('The Crash will begin in 1 Second, please equip the Fake Knife\n')
+        task.wait(1)
+        for x = 1, 9999 do
+            game.Players.LocalPlayer.Character:WaitForChild('HumanoidRootPart').CFrame = game.Players.LocalPlayer.Character:WaitForChild('HumanoidRootPart').CFrame * CFrame.new(0, -900, 0)
+        end
       else
         rconsolewarn('The Round did not start yet')
       end
-      rconsoleprint('The Crash will begin in 2 Seconds, please equip the Fake Knife\n')
-      task.wait(1)
-      rconsoleprint('The Crash will begin in 1 Second, please equip the Fake Knife\n')
-      task.wait(1)
-      game.Players.LocalPlayer.Character:WaitForChild('HumanoidRootPart').CFrame = game.Players.LocalPlayer.Character:WaitForChild('HumanoidRootPart').CFrame * CFrame.new(0, -900, 0)
     elseif inp == '.crashsheriff' then
       if round() then
         for i, v in pairs(game:GetService("Players"):GetChildren()) do
@@ -226,14 +228,16 @@ game:GetService('RunService').RenderStepped:Connect(function()
                 end
             end
         end
+        rconsoleprint('The Crash will begin in 2 Seconds, please equip the Fake Gun\n')
+        task.wait(1)
+        rconsoleprint('The Crash will begin in 1 Second, please equip the Fake Gun\n')
+        task.wait(1)
+        for x = 1, 9999 do
+            game.Players.LocalPlayer.Character:WaitForChild('HumanoidRootPart').CFrame = game.Players.LocalPlayer.Character:WaitForChild('HumanoidRootPart').CFrame * CFrame.new(0, -900, 0)
+        end
       else
         rconsolewarn('The Round did not start yet')
       end
-      rconsoleprint('The Crash will begin in 2 Seconds, please equip the Fake Gun\n')
-      task.wait(1)
-      rconsoleprint('The Crash will begin in 1 Second, please equip the Fake Gun\n')
-      task.wait(1)
-      game.Players.LocalPlayer.Character:WaitForChild('HumanoidRootPart').CFrame = game.Players.LocalPlayer.Character:WaitForChild('HumanoidRootPart').CFrame * CFrame.new(0, -900, 0)
     elseif inp == '.rejoin' then
       game:GetService('TeleportService'):Teleport(game.PlaceId)
     elseif inp == '.clear' then

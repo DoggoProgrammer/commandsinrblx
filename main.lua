@@ -14,7 +14,6 @@ end
 function tell()
   if round() then
     local murderer = ""
-    rconsoleclear()
     for i, v in pairs(game:GetService("Players"):GetChildren()) do
         if v ~= game:GetService("Players").LocalPlayer then
             for i ,v in pairs(v.Backpack:GetChildren()) do
@@ -34,7 +33,6 @@ function tell()
         end
     end
     local sheriff = ""
-    rconsoleclear()
     for i, v in pairs(game:GetService("Players"):GetChildren()) do
         if v ~= game:GetService("Players").LocalPlayer then
             for i ,v in pairs(v.Backpack:GetChildren()) do

@@ -62,7 +62,7 @@ game:GetService('RunService').RenderStepped:Connect(function()
     if inp:sub(1, 3) == '.tp' then
       local found = false
       for _, v in pairs(game.Players:GetPlayers()) do
-          if v.Name == inp:sub(5, inp:len()) then
+          if v.Name:lower() == inp:sub(5, inp:len()):lower() then
               game.Players.LocalPlayer.Character:WaitForChild('HumanoidRootPart').CFrame = v.Character:WaitForChild('HumanoidRootPart').CFrame
               found = true
           end

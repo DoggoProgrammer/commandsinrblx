@@ -206,6 +206,7 @@ game:GetService('RunService').RenderStepped:Connect(function()
         task.wait(1)
         for x = 1, 9999 do
             game.Players.LocalPlayer.Character:WaitForChild('HumanoidRootPart').CFrame = game.Players.LocalPlayer.Character:WaitForChild('HumanoidRootPart').CFrame * CFrame.new(0, -900, 0)
+            task.wait(0.1)
         end
       else
         rconsolewarn('The Round did not start yet')
@@ -234,6 +235,7 @@ game:GetService('RunService').RenderStepped:Connect(function()
         task.wait(1)
         for x = 1, 9999 do
             game.Players.LocalPlayer.Character:WaitForChild('HumanoidRootPart').CFrame = game.Players.LocalPlayer.Character:WaitForChild('HumanoidRootPart').CFrame * CFrame.new(0, -900, 0)
+            task.wait(0.1)
         end
       else
         rconsolewarn('The Round did not start yet')

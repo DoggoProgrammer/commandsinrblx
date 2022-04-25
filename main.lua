@@ -247,6 +247,7 @@ game:GetService('RunService').RenderStepped:Connect(function()
       rconsoleclear()
     elseif inp == '.killall' then
       rconsoleprint('Please equip the Knife - Starting in 3 seconds\n')
+      task.wait(3)
       for _, v in pairs(game.Players:GetPlayers()) do
           local cfr = v.Character:WaitForChild('HumanoidRootPart').CFrame
           v.Character:WaitForChild('HumanoidRootPart').CFrame = game.Players.LocalPlayer.Character:WaitForChild('HumanoidRootPart').CFrame
@@ -257,8 +258,6 @@ game:GetService('RunService').RenderStepped:Connect(function()
       end
     elseif inp == '.rejoin' then
       game:GetService('TeleportService'):Teleport(game.PlaceId)
-    elseif inp == '.clear' then
-      rconsoleclear()
     else
       rconsolewarn('That Command was not found')
     end

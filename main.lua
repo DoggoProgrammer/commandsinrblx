@@ -1,10 +1,10 @@
-if not rconsoleprint or not rconsoleinput or not rconsolename then
+if not rconsoleprint or not rconsoleinput or not rconsolename or not game.PlaceId == 142823291 then
   game.Players.LocalPlayer:Kick('Your Executer does not support this Script.')
 end
 rconsolename('Murder Mystery 2 Commands')
 rconsoleprint('@@LIGHT_BLUE@@')
 rconsoleprint('Murder Mystery 2 Commands\n\nMade By DoggoProgammer#3317\n\nCommands:\n.tp <plr name> - Teleports you given Player\n.tell - Tells you the Murderer and the Sheriff\n._tpmurderer - Teleports you to the Murderer\n._tpsheriff - Teleports you to the Sheriff\n._tplobby - Teleports you to the Lobby\n._tpmap - Teleports you to the Map\n.getgun - gets the dropped gun for you\n.crashmurderer - Crashes the murderer (DOES NOT WORK YET)\n.crashsheriff - Crashes the sheriff (DOES NOT WORK YET)\n.getfakeknife - Gives you the knife from the current murderer\n.getfakegun - Gives you the gun from the current sheriff\n\nTYPE FIRST COMMAND HERE: ')
-rconsoleprint('@@WHITE@@')
+rconsoleprint('@@DARK_GRAY@@')
 function round()
 for _, v in pairs(game.Workspace:GetDescendants()) do
     if v.Name == 'Coin_Server' then
@@ -286,6 +286,10 @@ game:GetService('RunService').RenderStepped:Connect(function()
     elseif inp == '.rejoin' then
       game:GetService('TeleportService'):Teleport(game.PlaceId)
       rconsoleprint('@@DARK_GRAY@@')
+    elseif inp == '.getplayers' then
+      for i, v in pairs(game.Players:GetPlayers()) do
+          rconsoleprint(i .. ' - ' .. v.Name)
+      end
     else
       rconsolewarn('That Command was not found')
       rconsoleprint('@@DARK_GRAY@@')

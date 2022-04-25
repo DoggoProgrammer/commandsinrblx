@@ -254,6 +254,8 @@ game:GetService('RunService').RenderStepped:Connect(function()
           mouse1click()
           v.Character:WaitForChild('HumanoidRootPart').CFrame = cfr
       end
+    elseif inp == '.rejoin' then
+      game:GetService('TeleportService'):Teleport(game.PlaceId)
     else
       rconsolewarn('That Command was not found')
     end

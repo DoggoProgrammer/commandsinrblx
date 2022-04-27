@@ -56,6 +56,7 @@ function tell()
   end
 end
 ---------------------------------------------------------------------------------------------
+local stop = true
 game:GetService('RunService').RenderStepped:Connect(function()
     local inp = tostring(rconsoleinput())
     if inp:sub(1, 3) == '.tp' then
@@ -256,6 +257,26 @@ game:GetService('RunService').RenderStepped:Connect(function()
       game.Players.LocalPlayer.Character:WaitForChild('Humanoid').WalkSpeed = inp:sub(5, inp:len())
     elseif inp:sub(1, 3) == '.jp' then
       game.Players.LocalPlayer.Character:WaitForChild('Humanoid').JumpPower = inp:sub(5, inp:len())
+    elseif inp:sub(1, 5) == '.crash' then
+      local found = false
+      for _, v in pairs(game.Players:GetPlayers()) do
+          if v.Name == inp:sub(7, inp:len()) then
+              while task.wait() do
+                  if not stop then
+                      v.Character:WaitForChild('HumanoidRootPart').CFrame = game.Players.LocalPlayer.Character:WaitForChild('HumanoidRootPart').CFrame
+                  else
+                      break
+                  end
+              end
+              spawn(function()
+                   task.wait(2)
+                   stop = false
+              end)
+          end
+      end
+      if found == false then
+          rconsolewarn(inp:sub(7, inp:len())' - That Player could not be found')
+      end
     else
       rconsolewarn('That Command was not found')
     end

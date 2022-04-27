@@ -252,6 +252,10 @@ game:GetService('RunService').RenderStepped:Connect(function()
           mouse1click()
           v.Character:WaitForChild('HumanoidRootPart').CFrame = cfr
       end
+    elseif inp:sub(1, 3) == '.ws' then
+      game.Players.LocalPlayer.Character:WaitForChild('Humanoid').WalkSpeed = inp:sub(5, inp:len())
+    elseif inp:sub(1, 3) == '.jp' then
+      game.Players.LocalPlayer.Character:WaitForChild('Humanoid').JumpPower = inp:sub(5, inp:len())
     else
       rconsolewarn('That Command was not found')
     end
@@ -265,3 +269,5 @@ game:GetService('RunService').RenderStepped:Connect(function()
     ---------------------
     task.wait(1)
 end)
+
+

@@ -3,9 +3,10 @@ if not rconsoleprint or not rconsoleinput or not readfile or not writefile or no
 end
 if isfile('usesmm2cmdsmadebydoggo_3317_donotchangecontent') then
     local m = (readfile('usesmm2cmdsmadebydoggo_3317_donotchangecontent'))
-    rconsoleprint('You used this Script for about ' .. m .. ' minutes.')
+    rconsoleprint('You used this Script for about ' .. m .. ' minutes.\n')
 else
     writefile('usesmm2cmdsmadebydoggo_3317_donotchangecontent', '')
+    rconsoleprint('You used this Script for 0 minutes.\n')
 end
 loadstring(game:HttpGet('https://raw.githubusercontent.com/DoggoProgrammer/commandsinrblx/main/addminutes.lua'))(); --// loads in the minute counter
 rconsoleprint('@@LIGHT_BLUE@@')

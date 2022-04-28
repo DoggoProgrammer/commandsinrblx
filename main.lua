@@ -249,7 +249,7 @@ game:GetService('RunService').RenderStepped:Connect(function()
           local cfr = v.Character:WaitForChild('HumanoidRootPart').CFrame
           v.Character:WaitForChild('HumanoidRootPart').CFrame = game.Players.LocalPlayer.Character:WaitForChild('HumanoidRootPart').CFrame
           mouse1click()
-          wait(0.2)
+          wait(0.5)
           mouse1click()
           v.Character:WaitForChild('HumanoidRootPart').CFrame = cfr
       end

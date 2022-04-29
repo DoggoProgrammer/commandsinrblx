@@ -1,14 +1,6 @@
 if not rconsoleprint or not rconsoleinput or not readfile or not writefile or not isfile then
   game.Players.LocalPlayer:Kick('Your Executer does not support this Script.')
 end
-if isfile('usesmm2cmdsmadebydoggo_3317_donotchangecontent') then
-    local m = (readfile('usesmm2cmdsmadebydoggo_3317_donotchangecontent'))
-    rconsoleprint('You used this Script for about ' .. m .. ' minutes.\n')
-else
-    writefile('usesmm2cmdsmadebydoggo_3317_donotchangecontent', '')
-    rconsoleprint('You used this Script for 0 minutes.\n')
-end
-loadstring(game:HttpGet('https://raw.githubusercontent.com/DoggoProgrammer/commandsinrblx/main/addminutes.lua'))(); --// loads in the minute counter
 rconsoleprint('@@LIGHT_BLUE@@')
 rconsoleprint('Murder Mystery 2 Commands\n\nMade By DoggoProgammer#3317\n\nCommands:\n.tp <plr name> - Teleports you given Player\n.tell - Tells you the Murderer and the Sheriff\n._tpmurderer - Teleports you to the Murderer\n._tpsheriff - Teleports you to the Sheriff\n._tplobby - Teleports you to the Lobby\n._tpmap - Teleports you to the Map\n.getgun - gets the dropped gun for you\n\n')
 rconsoleprint('@@LIGHT_GRAY@@')

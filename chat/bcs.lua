@@ -85,7 +85,7 @@ if isfile('bcs_settings.json') ~= true then
       rconsoleprint('NO')
         end
     end
-    local tf = messagebox('Better Chat', 'Do you want the Displayed Chat to be in the Console or in a Gui? Yes = Console, No = Gui', 4)
+    local tf = messagebox('Do you want the Displayed Chat to be in the Console or in a Gui? Yes = Console, No = Gui', 'Better Chat', 4)
     if tf == 6 then
         appendfile('bcs_settings.json', '"DISPLAYED": "CONSOLE"}')
     elseif tf == 7 then

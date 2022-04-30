@@ -95,4 +95,7 @@ if isfile('bcs_settings.json') ~= true then
         rconsoleprint('Something went wrong, it will be displayed in the console.\n')
     end
     rconsoleprint('\nThe Configuration is now Done! Script will startup.')
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/DoggoProgrammer/commandsinrblx/main/chat/main.lua'))();
+else
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/DoggoProgrammer/commandsinrblx/main/chat/main.lua'))();
 end

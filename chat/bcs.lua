@@ -85,15 +85,6 @@ if isfile('bcs_settings.json') ~= true then
       rconsoleprint('NO')
         end
     end
-    local tf = messagebox('Do you want the Displayed Chat to be in the Console or in a Gui? Yes = Console, No = Gui', 'Better Chat', 4)
-    if tf == 6 then
-        appendfile('bcs_settings.json', '"DISPLAYED": "CONSOLE"}')
-    elseif tf == 7 then
-        appendfile('bcs_settings.json', '"DISPLAYED": "GUI"}')
-    else
-        appendfile('bcs_settings.json', '"DISPLAYED": "CONSOLE"')
-        rconsoleprint('Something went wrong, it will be displayed in the console.\n')
-    end
     rconsoleprint('\nThe Configuration is now Done! Script will startup.')
     local chat = game:GetService('Players').LocalPlayer:WaitForChild('PlayerGui').Chat.Frame.ChatChannelParentFrame.Frame_MessageLogDisplay.Scroller
     local plr = game:GetService('Players').LocalPlayer

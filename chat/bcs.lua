@@ -95,7 +95,31 @@ if isfile('bcs_settings.json') ~= true then
         rconsoleprint('Something went wrong, it will be displayed in the console.\n')
     end
     rconsoleprint('\nThe Configuration is now Done! Script will startup.')
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/DoggoProgrammer/commandsinrblx/main/chat/main.lua'))();
+    local chat = game:GetService('Players').LocalPlayer:WaitForChild('PlayerGui').Chat.Frame.ChatChannelParentFrame.Frame_MessageLogDisplay.Scroller
+    local plr = game:GetService('Players').LocalPlayer
+    local pingcolor = game:GetService('HttpService'):JSONDecode(readfile('bcs_settings.json'))
+    task.wait(1)
+    chat.ChildAdded:Connect(function(child)
+         if child.Text:find(plr.Name) then
+             rconsoleprint('@@' .. pingcolor.COLOR .. '@@')
+             rconsoleprint('[' .. child.TextButton.Text .. ']: ' .. child.Text)
+             rconsoleprint('@@WHITE@@')
+         else
+             rconsoleprint('[' .. child.TextButton.Text .. ']: ' .. child.Text)
+         end
+    end)
 else
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/DoggoProgrammer/commandsinrblx/main/chat/main.lua'))();
+    local chat = game:GetService('Players').LocalPlayer:WaitForChild('PlayerGui').Chat.Frame.ChatChannelParentFrame.Frame_MessageLogDisplay.Scroller
+    local plr = game:GetService('Players').LocalPlayer
+    local pingcolor = game:GetService('HttpService'):JSONDecode(readfile('bcs_settings.json'))
+    task.wait(1)
+    chat.ChildAdded:Connect(function(child)
+         if child.Text:find(plr.Name) then
+             rconsoleprint('@@' .. pingcolor.COLOR .. '@@')
+             rconsoleprint('[' .. child.TextButton.Text .. ']: ' .. child.Text)
+             rconsoleprint('@@WHITE@@')
+         else
+             rconsoleprint('[' .. child.TextButton.Text .. ']: ' .. child.Text)
+         end
+    end)
 end

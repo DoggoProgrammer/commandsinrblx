@@ -92,7 +92,7 @@ chat.ChildAdded:Connect(function(c)
      wait(0.3)
      local newtemp = Message:Clone()
      newtemp.Parent = Messagelog
-     newtemp.Text = '   ' .. c.TextLabel.TextButton.Text .. ' ' .. c.TextLabel.TextButton.Text
+     newtemp.Text = '   ' .. c.TextLabel.TextButton.Text .. ' ' .. c.TextLabel.Text
      newtemp.Visible = true
 end)
 Clear.MouseButton1Click:Connect(function()

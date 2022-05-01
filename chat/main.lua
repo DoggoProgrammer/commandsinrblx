@@ -25,6 +25,8 @@ Chat.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 Chat.BorderColor3 = Color3.fromRGB(30, 30, 30)
 Chat.Position = UDim2.new(0.174193561, 0, 0.127472535, 0)
 Chat.Size = UDim2.new(0, 605, 0, 338)
+Chat.Active = true --// yes i was too lazy to do it the other way
+Chat.Draggable = true --// yes yes i know i know
 
 Messagelog.Name = "Messagelog"
 Messagelog.Parent = Chat

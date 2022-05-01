@@ -89,7 +89,7 @@ UICorner_4.Parent = Settings
 local chat = game.Players.LocalPlayer.PlayerGui.Chat.Frame.ChatChannelParentFrame.Frame_MessageLogDisplay.Scroller
 rconsoleclear()
 chat.ChildAdded:Connect(function(c)
-     wait(0.3)
+     wait(1)
      local newtemp = Message:Clone()
      newtemp.Parent = Messagelog
      newtemp.Text = '   ' .. c.TextLabel.TextButton.Text .. ' ' .. c.TextLabel.Text

@@ -91,6 +91,7 @@ chat.ChildAdded:Connect(function(c)
      local newtemp = Message:Clone()
      newtemp.Parent = Messagelog
      newtemp.Text = '   ' .. c.TextLabel.TextButton.Text .. ' ' .. c.TextLabel.TextButton.Text
+     newtemp.Visible = true
 end)
 Clear.MouseButton1Click:Connect(function()
     for _, v in pairs(Messagelog:GetChildren()) do

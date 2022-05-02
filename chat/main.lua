@@ -15,6 +15,12 @@ local Clear = Instance.new("TextButton")
 local UICorner_3 = Instance.new("UICorner")
 local Settings = Instance.new("TextButton")
 local UICorner_4 = Instance.new("UICorner")
+local Settings = Instance.new("Frame")
+local Closesettings = Instance.new("TextButton")
+local UICorner = Instance.new("UICorner")
+local UICorner_2 = Instance.new("UICorner")
+local Synapsex = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
 
 ScreenGui.Name = math.random(11, 99) .. math.random(11, 99) .. math.random(11, 99) .. math.random(11, 99) .. '-' .. math.random(11, 99) .. math.random(11, 99) .. math.random(11, 99) .. math.random(11, 99) .. '-' .. math.random(11, 99) .. math.random(11, 99)
 ScreenGui.Parent = game.CoreGui
@@ -86,6 +92,42 @@ Settings.TextSize = 16.000
 UICorner_4.CornerRadius = UDim.new(0, 4)
 UICorner_4.Parent = Settings
 
+Settingsframe.Name = "Settings"
+Settingsframe.Name = Chat
+Settingsframe.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+Settingsframe.BorderColor3 = Color3.fromRGB(30, 30, 30)
+Settingsframe.Position = UDim2.new(-0.127272725, 0, 0, 0)
+Settingsframe.Size = UDim2.new(0, 759, 0, 351)
+
+Closesettings.Name = "Closesettings"
+Closesettings.Parent = Settingsframe
+Closesettings.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Closesettings.BorderColor3 = Color3.fromRGB(40, 40, 40)
+Closesettings.Position = UDim2.new(0.837872803, 0, 0.94350332, 0)
+Closesettings.Size = UDim2.new(0, 107, 0, 14)
+Closesettings.Font = Enum.Font.SourceSansBold
+Closesettings.Text = "Close"
+Closesettings.TextColor3 = Color3.fromRGB(100, 100, 100)
+Closesettings.TextSize = 16.000
+
+UICorner.CornerRadius = UDim.new(0, 4)
+UICorner.Parent = Close
+
+UICorner_2.Parent = Settings
+
+Synapsex.Name = "Synapsex"
+Synapsex.Parent = Settings
+Synapsex.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Synapsex.BorderColor3 = Color3.fromRGB(40, 40, 40)
+Synapsex.Position = UDim2.new(0.0447239131, 0, 0.0403694287, 0)
+Synapsex.Size = UDim2.new(0, 190, 0, 26)
+Synapsex.Font = Enum.Font.SourceSansBold
+Synapsex.Text = "Synapse X Console Version"
+Synapsex.TextColor3 = Color3.fromRGB(100, 100, 100)
+Synapsex.TextSize = 16.000
+
+UICorner_3.CornerRadius = UDim.new(0, 4)
+UICorner_3.Parent = Synapsex
 local chat = game.Players.LocalPlayer.PlayerGui.Chat.Frame.ChatChannelParentFrame.Frame_MessageLogDisplay.Scroller
 rconsoleclear()
 chat.ChildAdded:Connect(function(c)
@@ -103,8 +145,18 @@ Clear.MouseButton1Click:Connect(function()
     end
 end)
 Settings.MouseButton1Click:Connect(function()
-    Settings.Text = 'Not There Yet!'
-    wait(5)
-    Settings.Text = 'Settings'
+    Settingsframe.Visible = true
+    Chat.Visible = false
 end)
-
+Closesettings.MouseButton1Click:Connect(function()
+    Settingsframe.Visible = false
+    Chat.Visible = true
+end)
+Synapsex.MouseButton1Click:Connect(function()
+    if not rconsoleprint or not rconsoleinput or not readfile or not writefile then
+        Synapsex.Text = 'Please Use Synapse X!'
+        wait(5)
+        Synapsex.Text = 'Synapse X Console Version'
+    end
+    rconsoleprint('Please wait a second...')
+end)

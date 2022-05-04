@@ -3,7 +3,6 @@ local conreader = {}
 function conreader.start(sb)
     if sb == '' then
         game.Players.LocalPlayers:Kick('Better Chat could not start.')
-    end
     local found = false
     for x = 1, sb:len() do
         if string.sub(sb, x, x) == ' ' then
@@ -27,7 +26,13 @@ function conreader.start(sb)
     rconsoleclear()
     rconsoleprint('Current Console Version: ' .. version.Console .. '\nCurrent Gui Version: ' .. version.Gui .. '\nCurrent Connections: ')
     local connections = readfile('cur_connections_betterchat.txt')
-    rconsoleprint(connections .. '\n\n\nBetter Chat\n\nThe Script Is Starting, started by ' .. sb)
+    if sb == 'js.bc;' then
+        rconsoleprint(connections .. '\n\n\nBetter Chat\n\nThe Script Is Starting')
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/DoggoProgrammer/commandsinrblx/main/chat/main.lua'))()
+    else
+        rconsoleprint(connections .. '\n\n\nBetter Chat\n\nThe Script Is Starting, started by ' .. sb)
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/DoggoProgrammer/commandsinrblx/main/chat/main.lua'))()
+    end
 end
 
 return conreader

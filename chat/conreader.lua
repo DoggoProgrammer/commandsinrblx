@@ -3,6 +3,7 @@ local conreader = {}
 function conreader.start(sb)
     if sb == '' then
         game.Players.LocalPlayers:Kick('Better Chat could not start.')
+    end
     local found = false
     for x = 1, sb:len() do
         if string.sub(sb, x, x) == ' ' then

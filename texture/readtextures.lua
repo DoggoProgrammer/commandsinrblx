@@ -35,7 +35,7 @@ Search.Position = UDim2.new(0.0189104974, 0, 0.0219901055, 0)
 Search.Size = UDim2.new(0, 586, 0, 23)
 Search.Font = Enum.Font.SourceSansBold
 Search.PlaceholderColor3 = Color3.fromRGB(100, 100, 100)
-Search.PlaceholderText = "Enter The Url or to search Files, type a / before your texture pack"
+Search.PlaceholderText = "Enter The Url or to search Files, type a / before the name"
 Search.Text = ""
 Search.TextColor3 = Color3.fromRGB(200, 200, 200)
 Search.TextSize = 16.000
@@ -103,3 +103,39 @@ Nameofthecreator.TextXAlignment = Enum.TextXAlignment.Left
 
 UICorner_5.CornerRadius = UDim.new(0, 4)
 UICorner_5.Parent = Nameofthecreator
+
+function gtp(txt)
+end
+Search.FocusLost:Connect(function()
+     Search.PlaceholderColor3 = Color3.fromRGB(100, 100, 100)
+     Search.PlaceholderText = 'Enter The Url or to search Files, type a / before the name'
+     local txt = Search.Text
+     local http = game:GetService('HttpService')
+     if txt:sub(1, 1) == '/' then
+         if isfile(txt) then
+             local notp = Nameoftexturepack:Clone()
+             notp.Parent = Results
+             notp.Text = ''
+             notp.Nameofthecreator.Text = http:JSONDecode(readfile(txt)).creatorname
+             notp.Use.MouseButton1Click:Connect(function()
+                  gtp(txt)
+             end)
+         else
+             Search.Text = ''
+             Search.PlaceholderColor3 = Color3.fromRGB(170, 0, 0)
+             Search.PlaceholderText = 'That File was not found in workspace.'
+         end
+     else
+         local success, errmsg = pcall(function()
+              game:HttpGet(txt)
+         end)
+         if success then
+             gtp(txt)
+         else
+             Search.Text = ''
+             Search.PlaceholderColor3 = Color3.fromRGB(170, 0, 0)
+             Search.PlaceholderText = errrmsg
+         end
+     end
+end)
+

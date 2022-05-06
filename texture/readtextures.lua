@@ -177,6 +177,7 @@ Search.FocusLost:Connect(function()
              notp.Text = ''
              notp.Nameofthecreator.Text = http:JSONDecode(readfile(txt)).creatorname
              notp.Use.MouseButton1Click:Connect(function()
+                  Main.Visible = false
                   gtp(txt)
              end)
          else
@@ -192,8 +193,9 @@ Search.FocusLost:Connect(function()
          if success then
              print('Loading Texturepack')
              gtp(txt)
+             Main.Visible = false
          else
-             print('Error whilst getting Texturepack from web')
+             print('Error whilst getting Texturepack from the Web')
              Search.Text = ''
              Search.PlaceholderColor3 = Color3.fromRGB(170, 0, 0)
              Search.PlaceholderText = errrmsg
